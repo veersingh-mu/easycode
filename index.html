@@ -1,0 +1,612 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Data Structures Codes — Copy Each Program</title><style>
+:root{color-scheme:light;--bg:#fff;--panel:#fff;--line:#dfe5ec;--text:#101828;--muted:#667085;--blue:#2478f2;--blue-soft:#fff;--code:#fff}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}header{max-width:1280px;margin:auto;padding:34px 24px 18px}h1{font-size:clamp(27px,4vw,38px);letter-spacing:-.03em;margin:0 0 8px;font-weight:800}header p{color:var(--muted);margin:0}.note{max-width:1280px;margin:0 auto 24px;padding:0 24px;color:var(--muted);font-size:13px}main{max-width:1280px;margin:auto;padding:0 24px 48px;display:grid;gap:24px}.card{border:1px solid var(--line);border-radius:22px;background:var(--panel);overflow:hidden;box-shadow:0 2px 5px #1018280a}.card-head{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:26px 28px 22px}.heading{min-width:0}.number{display:inline-flex;align-items:center;background:var(--blue-soft);color:var(--blue);font-size:12px;letter-spacing:.1em;font-weight:850;border-radius:13px;padding:7px 14px;margin-bottom:12px}h2{font-size:clamp(17px,2vw,23px);line-height:1.4;letter-spacing:-.02em;margin:0;font-weight:750}.copy-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;flex-shrink:0;border:0;border-radius:13px;padding:15px 20px;background:var(--blue);color:white;font-size:15px;font-weight:750;cursor:pointer;transition:background .15s,transform .15s}.copy-btn:hover{background:#155ed0;transform:translateY(-1px)}.copy-btn:focus-visible{outline:3px solid #93c5fd;outline-offset:3px}.copy-btn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}pre{margin:0 26px 26px;border:1px solid #fff;border-radius:16px;background:#fff;color:#202939;padding:18px 20px;overflow:auto;max-height:620px;font:13px/1.65 ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",monospace;tab-size:4;white-space:pre}.status{min-height:0;padding:0 28px 10px;color:#16803d;font-size:12px}.status:not(:empty){min-height:24px}.footer{max-width:1280px;margin:auto;padding:0 24px 30px;color:var(--muted);font-size:12px}@media(max-width:650px){header{padding:25px 16px 16px}.note{padding:0 16px}main{padding:0 16px 36px;gap:18px}.card-head{padding:20px;align-items:flex-start;flex-direction:column;gap:18px}.copy-btn{width:100%}pre{margin:0 14px 16px;padding:14px;font-size:12px}.status{padding:0 20px 8px}}
+
+/* Pure-white theme: remove all blue fills and blue accent surfaces */
+:root{--bg:#ffffff;--panel:#ffffff;--line:#e5e7eb;--text:#111827;--muted:#4b5563;--blue:#ffffff;--blue-soft:#ffffff;--code:#ffffff}
+body,header,.note,main,.card,.card-head,pre,code,.number,.copy-btn,.copy-btn:hover,.copy-btn:active,.status,.footer{background:#ffffff!important}
+.card{border-color:#e5e7eb!important;box-shadow:0 2px 5px rgba(17,24,39,.05)!important}
+.number{color:#111827!important;border:1px solid #e5e7eb!important}
+.copy-btn{color:#111827!important;border:1px solid #d1d5db!important;box-shadow:none!important}
+.copy-btn:hover{color:#111827!important;border-color:#9ca3af!important;transform:none!important}
+.copy-btn svg{stroke:#111827!important}
+pre{border-color:#e5e7eb!important;color:#111827!important}
+
+
+/* Final all-white theme: every surface is white, with dark readable text */
+:root { color-scheme: light; --bg:#ffffff; --panel:#ffffff; --line:#e5e7eb; --text:#111827; --muted:#374151; --blue:#ffffff; --blue-soft:#ffffff; --code:#ffffff; }
+html, body, header, .note, main, .card, .card-head, pre, code, .number, .copy-btn, .copy-btn:hover, .copy-btn:active, .status, .footer { background:#ffffff !important; }
+body, body *, h1, h2, p, .note, .number, .copy-btn, .copy-btn span, pre, code, .status, .footer { color:#111827 !important; }
+.card { border-color:#e5e7eb !important; box-shadow:0 2px 5px rgba(17,24,39,.05) !important; }
+.number { border:1px solid #e5e7eb !important; }
+.copy-btn { border:1px solid #d1d5db !important; }
+.copy-btn:hover { border-color:#9ca3af !important; }
+.copy-btn svg { stroke:#111827 !important; }
+pre { border-color:#e5e7eb !important; }
+</style></head><body><header><h1>Data Structures Codes</h1><p>Copy any program with one click and paste it into your code editor.</p></header><div class="note">Tip: Click the Copy code button on the program you need. If clipboard access is blocked, the code will be selected so you can press Ctrl+C.</div><main><section class="card"><div class="card-head"><div class="heading"><span class="number">CODE 01</span><h2>Experiment 1 — Insertion and Deletion in a Specific Position in an Array using Function</h2></div><button class="copy-btn" data-copy="1" aria-label="Copy Experiment 1 — Insertion and Deletion in a Specific Position in an Array using Function"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h3"/></svg><span>Copy code</span></button></div><pre><code id="code-1"># Experiment No. 1: Implementation of Insertion and deletion in a specific pos
+    ition in an Array using Function
+arr = []
+n = 5
+print(&quot;Enter 5 elements:&quot;)
+for i in range(n):
+    num = int(input(&quot;Enter element: &quot;))
+    arr.append(num)
+print(&quot;Original Array:&quot;, arr)
+# Insertion
+position = int(input(&quot;Enter position to insert (1-6): &quot;))
+element = int(input(&quot;Enter element to insert: &quot;))
+arr.insert(position - 1, element)
+print(&quot;Array after insertion:&quot;)
+print(arr)
+# Deletion
+position = int(input(&quot;Enter position to delete (1-6): &quot;))
+arr.pop(position - 1)
+print(&quot;Array after deletion:&quot;)
+print(arr)
+largest = arr[0]
+for i in arr:
+    if i &gt; largest:
+        largest = i
+print(&quot;Largest element =&quot;, largest)
+# Finding smallest element
+smallest = arr[0]
+for i in arr:
+    if i &lt; smallest:
+        smallest = i
+print(&quot;Smallest element =&quot;, smallest)</code></pre><div class="status" id="status-1" aria-live="polite"></div></section><section class="card"><div class="card-head"><div class="heading"><span class="number">CODE 02</span><h2>Experiment 2 — Stack using Array for Insertion (Push) and Deletion (Pop) of Elements</h2></div><button class="copy-btn" data-copy="2" aria-label="Copy Experiment 2 — Stack using Array for Insertion (Push) and Deletion (Pop) of Elements"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h3"/></svg><span>Copy code</span></button></div><pre><code id="code-2">MAX = 6
+stack = [0] * MAX
+top = -1
+def push (value) :
+    global top
+    if top == MAX - 1:
+        print (&quot;Stack is full&quot;)
+    else:
+        top += 1
+        stack[top] = value
+        print (&quot;Value pushed successfully&quot;)
+def pop():
+    global top
+    if top == -1:
+        print(&quot;Stack is empty&quot;)
+    else:
+        print(&quot;The top value is:&quot;, stack[top])
+        print(&quot;Popped value is:&quot;, stack[top])
+        top -= 1
+def peek():
+    if top == -1:
+        print (&quot;Stack is empty&quot;)
+    else:
+        print(&quot;The top value is:&quot;, stack[top])
+while True:
+    print (&quot;\nEnter your choice:&quot;)
+    print (&quot;1. Push&quot;)
+    print (&quot;2. Pop&quot;)
+    print(&quot;3. Peek&quot;)
+    print(&quot;4. Exit&quot;)
+    ch = int(input(&quot;Enter the value: &quot;))
+    if ch == 1:
+        x = int(input (&quot;Enter the value: &quot;))
+        push (x)
+    elif ch == 2:
+        pop ()
+    elif ch == 3:
+        peek ()
+    elif ch == 4:
+        print(&quot;Exiting ... &quot;)
+        break
+    else:
+        print(&quot;Invalid Choice&quot;)</code></pre><div class="status" id="status-2" aria-live="polite"></div></section><section class="card"><div class="card-head"><div class="heading"><span class="number">CODE 03</span><h2>Experiment 3 — Infix to Postfix Conversion using Stack</h2></div><button class="copy-btn" data-copy="3" aria-label="Copy Experiment 3 — Infix to Postfix Conversion using Stack"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h3"/></svg><span>Copy code</span></button></div><pre><code id="code-3">def precedence (op) :
+    if op == &#x27;^&#x27;:
+        return 3
+    elif op == &#x27;*&#x27; or op == &#x27;/&#x27;:
+        return 2
+    elif op == &#x27;+&#x27; or op == &#x27;-&#x27;:
+        return 1
+    else:
+        return 0
+#Function to convert infix to postfix
+def infix_to_postfix (expression) :
+    stack = []
+    postfix =  &quot;&quot;
+    for ch in expression:
+        # Operand
+        if ch.isalnum():
+            postfix += ch
+        # Opening bracket
+        elif ch == &#x27;(&#x27;:
+            stack.append(ch)
+        # Closing bracket
+        elif ch == &#x27;)&#x27;:
+            while stack and stack[-1] != &#x27;(&#x27;:
+                postfix += stack.pop()
+            stack.pop()
+        # Operator
+        else:
+            while (stack and stack[-1] != &#x27;(&#x27; and
+                    precedence (stack[-1]) &gt;= precedence (ch)):
+                postfix += stack.pop()
+            stack. append(ch)
+    # Pop remaining operators
+    while stack:
+        postfix += stack.pop()
+    return postfix
+# Main Program
+infix = input (&quot;Enter Infix Expression: &quot;).replace (&quot; &quot;,&quot;&quot;)
+postfix = infix_to_postfix(infix)
+print (&quot;Postfix Expression:&quot;, postfix)</code></pre><div class="status" id="status-3" aria-live="polite"></div></section><section class="card"><div class="card-head"><div class="heading"><span class="number">CODE 04</span><h2>Experiment 4 — Infix to Prefix Conversion using Stack</h2></div><button class="copy-btn" data-copy="4" aria-label="Copy Experiment 4 — Infix to Prefix Conversion using Stack"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h3"/></svg><span>Copy code</span></button></div><pre><code id="code-4">def precedence(op):
+    if op == &#x27;^&#x27;:
+        return 3
+    elif op == &#x27;*&#x27; or op == &#x27;/&#x27;:
+        return 2
+    elif op == &#x27;+&#x27; or op == &#x27;-&#x27;:
+        return 1
+    else:
+        return 0
+def infix_to_prefix(expression):
+    expression = expression[::-1]
+    new_exp = &quot;&quot;
+    for ch in expression:
+        if ch == &#x27;(&#x27;:
+            new_exp += &#x27;)&#x27;
+        elif ch == &#x27;)&#x27;:
+            new_exp += &#x27;(&#x27;
+        else:
+            new_exp += ch
+    stack = []
+    postfix = &quot;&quot;
+    # Convert reversed infix to postfix
+    for ch in new_exp:
+        if ch.isalnum():
+            postfix += ch
+        elif ch == &#x27;(&#x27;:
+            stack.append(ch)
+        elif ch == &#x27;)&#x27;:
+            while stack and stack[-1] != &#x27;(&#x27;:
+                postfix += stack.pop()
+            if stack:
+                stack.pop()
+        else:
+            while (stack and stack[-1] != &#x27;(&#x27; and
+                precedence(stack[-1]) &gt; precedence(ch)):
+                postfix += stack.pop()
+            stack.append(ch)
+    while stack:
+        postfix += stack.pop()
+    prefix = postfix[::-1]
+    return prefix
+# Driver Code
+infix = input(&quot;Enter infix expression: &quot;).replace(&quot; &quot;, &quot;&quot;)
+prefix = infix_to_prefix(infix)
+print(&quot;Prefix expression:&quot;, prefix)</code></pre><div class="status" id="status-4" aria-live="polite"></div></section><section class="card"><div class="card-head"><div class="heading"><span class="number">CODE 05</span><h2>Experiment 5 — Check whether an Expression containing Parentheses is Valid or Balanced</h2></div><button class="copy-btn" data-copy="5" aria-label="Copy Experiment 5 — Check whether an Expression containing Parentheses is Valid or Balanced"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h3"/></svg><span>Copy code</span></button></div><pre><code id="code-5"># Function to return precedence of operators
+def precedence (op) :
+    if op == &#x27;^&#x27;:
+        return 3
+    elif op == &#x27;*&#x27; or op == &#x27;/&#x27;:
+        return 2
+    elif op == &#x27;+&#x27; or op == &#x27;-&#x27;:
+        return 1
+    else:
+        return 0
+# Function to check if expression is valid
+def is_valid (expression) :
+    brackets = []
+    prev = &#x27;&#x27;
+    for ch in expression:
+        if ch.isalnum():
+            prev = &#x27;operand&#x27;
+        elif ch in &quot;+-*/^&quot;:
+            if prev != &#x27;operand&#x27; and prev != &#x27;)&#x27;:
+                return False
+            prev = &#x27;operator&#x27;
+        elif ch == &#x27;(&#x27;:
+            brackets.append(ch)
+            prev = &#x27;(&#x27;
+        elif ch == &#x27;)&#x27;:
+            if not brackets:
+                return False
+            brackets. pop()
+            prev = &#x27;)&#x27;
+        else:
+            return False
+    if brackets:
+        return False
+    if prev == &#x27;operator&#x27;:
+        return False
+    return True
+# Function to convert infix to postfix
+def infix_to_postfix (expression):
+    stack = []
+    postfix = &quot;&quot;
+    for ch in expression:
+        if ch.isalnum():
+            postfix += ch
+        elif ch == &#x27;(&#x27;:
+            stack.append (ch)
+        elif ch == &#x27;)&#x27;:
+            while stack and stack[-1] != &#x27;(&#x27;:
+                postfix += stack.pop()
+            stack.pop()
+        else:
+            while (stack and stack[-1] != &#x27;(&#x27; and
+                    precedence (stack[-1]) &gt;= precedence(ch)):
+                postfix += stack.pop()
+            stack.append(ch)
+    while stack:
+        postfix += stack.pop()
+    return postfix
+# Function to convert infix to prefix
+def infix_to_prefix (expression) :
+    expression = expression [::-1]
+    temp = &quot;&quot;
+    for ch in expression:
+        if ch == &#x27;(&#x27;:
+            temp += &#x27;)&#x27;
+        elif ch == &#x27;)&#x27;:
+            temp += &#x27;(&#x27;
+        else:
+            temp += ch
+    postfix = infix_to_postfix(temp)
+    prefix = postfix [::-1]
+    return prefix
+# Main Program
+infix = input (&quot;Enter Infix Expression: &quot;).replace (&quot; &quot;, &quot;&quot;)
+if is_valid(infix):
+    prefix = infix_to_prefix(infix)
+    print (&quot;Prefix Expression:&quot;, prefix)
+else:
+    print (&quot;Invalid Infix Expression!&quot;)</code></pre><div class="status" id="status-5" aria-live="polite"></div></section><section class="card"><div class="card-head"><div class="heading"><span class="number">CODE 06</span><h2>Experiment 6 — Linear Queue</h2></div><button class="copy-btn" data-copy="6" aria-label="Copy Experiment 6 — Linear Queue"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h3"/></svg><span>Copy code</span></button></div><pre><code id="code-6">SIZE = 5
+queue = [0] * SIZE
+front = -1
+rear = -1
+def enqueue():
+    global front, rear
+    value = int(input(&quot;Enter the value: &quot;))
+    if rear == SIZE - 1:
+        print(&quot;Queue is full (Overflow)&quot;)
+    elif front == -1 and rear == -1:
+        front = rear = 0
+        queue[rear] = value
+        print(&quot;Inserted&quot;, value)
+    else:
+        rear += 1
+        queue[rear] = value
+        print(&quot;Inserted&quot;, value)
+def dequeue():
+    global rear, front
+    if front == -1 and rear == -1:
+        print(&quot;Queue is empty (Underflow)&quot;)
+    elif front == rear:
+        print(&quot;Deleted&quot;, queue[front])
+        front = rear = -1
+    else:
+        print(&quot;Deleted&quot;, queue[front])
+        front += 1
+def peek():
+    if front ==-1 and rear ==-1: (
+        print(&quot;Queue is empty&quot;))
+    else:
+        print(&quot;The first element is&quot;, queue[front])
+def display():
+    if front ==-1 and rear ==-1:
+        print(&quot;Queue is empty&quot;)
+    else:
+        print(&quot;Queue elements:&quot;,end=&quot; &quot;)
+        for i in range(front, rear + 1):
+            print(queue[i],end=&quot; &quot;)
+            print()
+# Main Program
+while True:
+    print(&quot;\nQueue Operations&quot;)
+    print(&quot;1. Enqueue&quot;)
+    print(&quot;2. Dequeue&quot;)
+    print(&quot;3. Peek&quot;)
+    print(&quot;4. Display&quot;)
+    print(&quot;5. Exit&quot;)
+    ch = int(input(&quot;Enter your choice: &quot;))
+    if ch == 1:
+        enqueue()
+    elif ch == 2:
+        dequeue()
+    elif ch == 3:
+        peek()
+    elif ch == 4:
+        display()
+    elif ch == 5:
+        print(&quot;Exiting...&quot;)
+        break
+    else:
+        print(&quot;Invalid choice&quot;)</code></pre><div class="status" id="status-6" aria-live="polite"></div></section><section class="card"><div class="card-head"><div class="heading"><span class="number">CODE 07</span><h2>Experiment 7 — Circular Queue</h2></div><button class="copy-btn" data-copy="7" aria-label="Copy Experiment 7 — Circular Queue"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h3"/></svg><span>Copy code</span></button></div><pre><code id="code-7">SIZE = 5
+queue = [0] * SIZE
+front = -1
+rear = -1
+def enqueue():
+    global front, rear
+    value = int(input(&quot;Enter the value: &quot;))
+    if (rear + 1) % SIZE == front:
+        print(&quot;Queue is full (Overflow)&quot;)
+    elif front == -1 and rear == -1:
+        front = rear = 0
+        queue[rear] = value
+        print(&quot;Inserted&quot;, value)
+    else:
+        rear = (rear + 1) % SIZE
+        queue[rear] = value
+        print(&quot;Inserted&quot;, value)
+def dequeue():
+    global front, rear
+    # Queue is empty
+    if front == -1 and rear == -1:
+        print(&quot;Queue is empty (Underflow)&quot;)
+    elif front == rear:
+        print(&quot;Deleted&quot;, queue[front])
+        front = rear = -1
+    else:
+        print(&quot;Deleted&quot;, queue[front])
+        front = (front + 1) % SIZE
+def peek():
+    if front == -1 and rear == -1:
+        print(&quot;Queue is empty&quot;)
+    else:
+        print(&quot;The first element is&quot;, queue[front])
+def display():
+    if front == -1 and rear == -1:
+        print(&quot;Queue is empty&quot;)
+    else:
+        print(&quot;Queue elements:&quot;, end=&quot; &quot;)
+        i = front
+        while True:
+            print(queue[i], end=&quot; &quot;)
+            if i == rear:
+                break
+            i = (i + 1) % SIZE
+        print()
+# Main Program
+while True:
+    print(&quot;\nCircular Queue Operations&quot;)
+    print(&quot;1. Enqueue&quot;)
+    print(&quot;2. Dequeue&quot;)
+    print(&quot;3. Peek&quot;)
+    print(&quot;4. Display&quot;)
+    print(&quot;5. Exit&quot;)
+    ch = int(input(&quot;Enter your choice: &quot;))
+    if ch == 1:
+        enqueue()
+    elif ch == 2:
+        dequeue()
+    elif ch == 3:
+        peek()
+    elif ch == 4:
+        display()
+    elif ch == 5:
+        print(&quot;Exiting...&quot;)
+        break
+    else:
+        print(&quot;Invalid choice&quot;)</code></pre><div class="status" id="status-7" aria-live="polite"></div></section><section class="card"><div class="card-head"><div class="heading"><span class="number">CODE 08</span><h2>Experiment 8 — Linked List</h2></div><button class="copy-btn" data-copy="8" aria-label="Copy Experiment 8 — Linked List"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h3"/></svg><span>Copy code</span></button></div><pre><code id="code-8"># Node class
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+# Linked List class
+class LinkedList:
+    def __init__(self):
+        self.head = None
+    # Insert at beginning
+    def insert_beginning(self, data):
+        new_node = Node(data)
+        new_node.next = self.head
+        self.head = new_node
+        print(&quot;Node inserted at beginning&quot;)
+    # Insert at end
+    def insert_end(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+            print(&quot;Node inserted at end&quot;)
+            return
+        temp = self.head
+        while temp.next is not None:
+            temp = temp.next
+        temp.next = new_node
+        print(&quot;Node inserted at end&quot;)
+    # Delete from beginning
+    def delete_beginning(self):
+        if self.head is None:
+            print(&quot;Linked list is empty&quot;)
+            return
+        self.head = self.head.next
+        print(&quot;Node deleted from beginning&quot;)
+    # Delete from end
+    def delete_end(self):
+        if self.head is None:
+            print(&quot;Linked list is empty&quot;)
+            return
+        if self.head.next is None:
+            self.head = None
+            print(&quot;Node deleted from end&quot;)
+            return
+        temp = self.head
+        while temp.next.next is not None:
+            temp = temp.next
+        temp.next = None
+        print(&quot;Node deleted from end&quot;)
+    # Display
+    def display(self):
+        if self.head is None:
+            print(&quot;Linked list is empty&quot;)
+            return
+        temp = self.head
+        while temp is not None:
+            print(temp.data, end=&quot; -&gt; &quot;)
+            temp = temp.next
+        print(&quot;None&quot;)
+# Main program
+linked_list = LinkedList()
+while True:
+    print(&quot;\n--- Linked List Menu ---&quot;)
+    print(&quot;1. Insert at beginning&quot;)
+    print(&quot;2. Insert at end&quot;)
+    print(&quot;3. Delete from beginning&quot;)
+    print(&quot;4. Delete from end&quot;)
+    print(&quot;5. Display&quot;)
+    print(&quot;6. Exit&quot;)
+    choice = int(input(&quot;Enter your choice: &quot;))
+    if choice == 1:
+        data = int(input(&quot;Enter data: &quot;))
+        linked_list.insert_beginning(data)
+    elif choice == 2:
+        data = int(input(&quot;Enter data: &quot;))
+        linked_list.insert_end(data)
+    elif choice == 3:
+        linked_list.delete_beginning()
+    elif choice == 4:
+        linked_list.delete_end()
+    elif choice == 5:
+        linked_list.display()
+    elif choice == 6:
+        print(&quot;Exiting...&quot;)
+        break
+    else:
+        print(&quot;Invalid choice!&quot;)</code></pre><div class="status" id="status-8" aria-live="polite"></div></section><section class="card"><div class="card-head"><div class="heading"><span class="number">CODE 09</span><h2>Experiment 9 — Binary Search Tree (BST)</h2></div><button class="copy-btn" data-copy="9" aria-label="Copy Experiment 9 — Binary Search Tree (BST)"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h3"/></svg><span>Copy code</span></button></div><pre><code id="code-9">class Node:
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
+def insert(root, value):
+    if root is None:
+        return Node(value)
+    if value &lt; root.data:
+        root.left = insert(root.left, value)
+    elif value &gt; root.data:
+        root.right = insert(root.right, value)
+    return root
+def display(root, space=0):
+    if root is None:
+        return
+    space += 5
+    display(root.right, space)
+    print()
+    print(&quot; &quot; * space + str(root.data))
+    display(root.left, space)
+def inorder(root):
+    if root is not None:
+        inorder(root.left)
+        print(root.data, end=&quot; &quot;)
+        inorder(root.right)
+def preorder(root):
+    if root is not None:
+        print(root.data, end=&quot; &quot;)
+        preorder(root.left)
+        preorder(root.right)
+def postorder(root):
+    if root is not None:
+        postorder(root.left)
+        postorder(root.right)
+        print(root.data, end=&quot; &quot;)
+# Main program
+root = None
+n = int(input(&quot;How many nodes you want to insert? &quot;))
+for i in range(n):
+    value = int(input(&quot;Enter the value to insert: &quot;))
+    root = insert(root, value)
+print(&quot;\nConstructed Binary Search Tree\n&quot;)
+display(root)
+print(&quot;\n\nInorder Traversal&quot;)
+inorder(root)
+print(&quot;\n\nPreorder Traversal&quot;)
+preorder(root)
+print(&quot;\n\nPostorder Traversal&quot;)
+postorder(root)
+print()</code></pre><div class="status" id="status-9" aria-live="polite"></div></section><section class="card"><div class="card-head"><div class="heading"><span class="number">CODE 10</span><h2>Experiment 10 — Breadth First Search (BFS)</h2></div><button class="copy-btn" data-copy="10" aria-label="Copy Experiment 10 — Breadth First Search (BFS)"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h3"/></svg><span>Copy code</span></button></div><pre><code id="code-10">graph = {
+    &quot;A&quot;: [&quot;S&quot;, &quot;H&quot;],
+    &quot;S&quot;: [&quot;H&quot;, &quot;W&quot;],
+    &quot;H&quot;: [&quot;W&quot;, &quot;I&quot;],
+    &quot;W&quot;: [&quot;I&quot;, &quot;N&quot;],
+    &quot;I&quot;: [&quot;N&quot;],
+    &quot;N&quot;: []}
+visited = []
+queue = [&quot;A&quot;]
+while queue:
+    node = queue.pop(0)
+    if node not in visited:
+        print(node, end=&quot;&quot;)
+        visited.append(node)
+        for neighbour in graph[node]:
+            queue.append(neighbour)</code></pre><div class="status" id="status-10" aria-live="polite"></div></section><section class="card"><div class="card-head"><div class="heading"><span class="number">CODE 11</span><h2>Experiment 10 — Depth First Search (DFS)</h2></div><button class="copy-btn" data-copy="11" aria-label="Copy Experiment 10 — Depth First Search (DFS)"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h3"/></svg><span>Copy code</span></button></div><pre><code id="code-11">graph = {
+    &quot;K1&quot;: [&quot;A1&quot;, &quot;T&quot;],
+    &quot;A1&quot;: [&quot;T&quot;, &quot;K2&quot;],
+    &quot;T&quot;: [&quot;K2&quot;, &quot;A2&quot;],
+    &quot;K2&quot;: [&quot;A2&quot;, &quot;R&quot;],
+    &quot;A2&quot;: [&quot;R&quot;],
+    &quot;R&quot;: []}
+visited = []
+def dfs(node):
+    if node not in visited:
+        print(node.replace(&quot;1&quot;, &quot;&quot;).replace(&quot;2&quot;, &quot;&quot;), end=&quot;&quot;)
+        visited.append(node)
+        for neighbour in graph[node]:
+            dfs(neighbour)
+dfs(&quot;K1&quot;)</code></pre><div class="status" id="status-11" aria-live="polite"></div></section><section class="card"><div class="card-head"><div class="heading"><span class="number">CODE 12</span><h2>Experiment 11 — Linear Search</h2></div><button class="copy-btn" data-copy="12" aria-label="Copy Experiment 11 — Linear Search"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h3"/></svg><span>Copy code</span></button></div><pre><code id="code-12">n = int(input(&quot;Enter number of elements: &quot;))
+arr = []
+for i in range(n):
+    element = int(input(&quot;Enter element: &quot;))
+    arr.append(element)
+key = int(input(&quot;Enter key to search: &quot;))
+for i in range(n):
+    if arr[i] == key:
+        print(&quot;Key found at position&quot;, i + 1)
+        break
+else:
+    print(&quot;Key not found&quot;)</code></pre><div class="status" id="status-12" aria-live="polite"></div></section><section class="card"><div class="card-head"><div class="heading"><span class="number">CODE 13</span><h2>Experiment 11 — Binary Search</h2></div><button class="copy-btn" data-copy="13" aria-label="Copy Experiment 11 — Binary Search"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h3"/></svg><span>Copy code</span></button></div><pre><code id="code-13">print(&quot;BINARY SEARCH&quot;)
+n = int(input(&quot;Enter number of elements: &quot;))
+arr = []
+for i in range(n):
+    element = int(input(f&quot;Enter element {i + 1}: &quot;))
+    arr.append(element)
+key = int(input(&quot;Enter key to search: &quot;))
+low = 0
+high = n - 1
+while low &lt;= high:
+    mid = (low + high) // 2
+    if arr[mid] == key:
+        print(&quot;Key found at position&quot;, mid + 1)
+        break
+    elif key &lt; arr[mid]:
+        high = mid - 1
+    else:
+        low = mid + 1
+else:
+    print(&quot;Key not found&quot;)</code></pre><div class="status" id="status-13" aria-live="polite"></div></section><section class="card"><div class="card-head"><div class="heading"><span class="number">CODE 14</span><h2>Experiment 12 — N Queens Problem</h2></div><button class="copy-btn" data-copy="14" aria-label="Copy Experiment 12 — N Queens Problem"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h3"/></svg><span>Copy code</span></button></div><pre><code id="code-14">def is_safe(board, row, col, n):
+    # Check column
+    for i in range(row):
+        if board[i] == col:
+            return False
+    # Check diagonals
+    for i in range(row):
+        if abs(board[i] - col) == abs(i - row):
+            return False
+    return True
+def solve(board, row, n):
+    # All queens are placed
+    if row == n:
+        print_board(board, n)
+        return
+    # Try every column
+    for col in range(n):
+        if is_safe(board, row, col, n):
+            board[row] = col       # Place queen
+            solve(board, row + 1, n) # Move to next row
+            board[row] = -1        # Backtrack
+def print_board(board, n):
+    for i in range(n):
+        for j in range(n):
+            if board[i] == j:
+                print(&quot;Q&quot;, end=&quot; &quot;)
+            else:
+                print(&quot;.&quot;, end=&quot; &quot;)
+        print()
+    print()
+# Main program
+n = int(input(&quot;Enter value of N: &quot;))
+board = [-1] * n
+solve(board, 0, n)</code></pre><div class="status" id="status-14" aria-live="polite"></div></section></main><div class="footer">14 programs · Copy buttons work in supported browsers.</div><script>
+document.querySelectorAll('.copy-btn').forEach(button=>{button.addEventListener('click',async()=>{const id=button.dataset.copy;const code=document.getElementById('code-'+id).innerText;const status=document.getElementById('status-'+id);const label=button.querySelector('span');try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(code)}else{throw new Error('Clipboard unavailable')}label.textContent='Copied!';status.textContent='Code copied to clipboard.';setTimeout(()=>{label.textContent='Copy code';status.textContent=''},1800)}catch(e){const range=document.createRange();range.selectNodeContents(document.getElementById('code-'+id));const selection=window.getSelection();selection.removeAllRanges();selection.addRange(range);status.textContent='Code selected — press Ctrl+C to copy.'}})});
+</script></body></html>
